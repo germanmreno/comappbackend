@@ -39,7 +39,7 @@ router.post("/activregister", (req, res) => {
     res.json({ fileName: file.name, filePath: `/uploads/{file.name}` });
   });
 });
-router.post("/actarecepcion", (req, res) => {
+router.post("/comapp/actarecepcion", (req, res) => {
   const __filename = fileURLToPath(import.meta.url);
 
   const __dirname = path.dirname(__filename);
