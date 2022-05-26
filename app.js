@@ -10,6 +10,8 @@ import db from "./database/db.js";
 import comRouter from "./routes/routes.js";
 
 const app = express();
+app.use(cors());
+app.use(cors({origin:true,credentials: true}));
 
 app.use(fileUpload());
 
