@@ -4,6 +4,7 @@ import { DataTypes } from "sequelize";
 
 const CompanyModel = db.define("companies", {
   guid: { type: DataTypes.UUID, primaryKey: true },
+  status: { type: DataTypes.STRING },
   nombre: { type: DataTypes.STRING },
   numregistro: { type: DataTypes.STRING },
   rif: { type: DataTypes.STRING },

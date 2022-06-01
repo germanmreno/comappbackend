@@ -61,9 +61,12 @@ export const loginUser = async (req, res) => {
         .setExpirationTime("24h")
         .sign(encoder.encode(process.env.JWT_PRIVATE_KEY));
 
+      console.log(user.permisos);
+
       return res.json({
         guid: user.guid,
         name: user.nombreusuario,
+        rol: user.permisos,
         jwt,
       });
     } else {
