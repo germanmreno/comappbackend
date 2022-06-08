@@ -17,6 +17,7 @@ router.get("/companies", getAllCompanies);
 router.get("/companies/:id", getCompany);
 router.post("/home", authCompany);
 router.post("/companyregister", registerCompany);
+router.post("/certificate", companyData);
 router.post("/register", registerUser);
 router.post("/confirmregister", companyData);
 router.post("/login", loginUser);

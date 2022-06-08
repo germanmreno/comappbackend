@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 23-05-2022 a las 20:46:24
+-- Tiempo de generación: 08-06-2022 a las 21:49:33
 -- Versión del servidor: 10.4.20-MariaDB
 -- Versión de PHP: 8.0.9
 
@@ -29,6 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `companies` (
   `guid` varchar(36) NOT NULL,
+  `status` varchar(15) NOT NULL DEFAULT 'Espera',
   `numregistro` varchar(30) NOT NULL,
   `nombre` varchar(100) NOT NULL,
   `rif` varchar(25) NOT NULL,
@@ -64,8 +65,8 @@ CREATE TABLE `companies` (
 -- Volcado de datos para la tabla `companies`
 --
 
-INSERT INTO `companies` (`guid`, `numregistro`, `nombre`, `rif`, `numalianza`, `direccionfiscal`, `estado`, `municipio`, `parroquia`, `representante`, `telefonorepresentante`, `correorepresentante`, `cedularepresentante`, `rumrepresentante`, `tipoactividad`, `actividadminera`, `descripcionactminera`, `nombreencargado`, `cedulaencargado`, `numempleados`, `nombreempleados`, `cedulaempleados`, `cargoempleados`, `medidacomercio`, `inventario`, `promediooro`, `promedioganancia`, `porcentajecompra`, `createdAt`, `updatedAt`) VALUES
-('d4e20437-d6fb-4c32-a03d-418d835210c8', '391831246', 'Comercializadora de Oro', '13213123123', '123', '123', 'Miranda', 'Acevedo', 'Aragüita', '12312', '13123', '123132', '123312', '12313', '\"Compra/Venta,Análisis/Fundición\"', '\"Diamante,Coltán\"', '123', 'sddsa', 'sadsad', '1', 'sasad', 'assadsad', 'asds', '130', '\"Espectómetro,CajaFuerte\"', '123', '123', '213', '2022-05-19', '2022-05-19');
+INSERT INTO `companies` (`guid`, `status`, `numregistro`, `nombre`, `rif`, `numalianza`, `direccionfiscal`, `estado`, `municipio`, `parroquia`, `representante`, `telefonorepresentante`, `correorepresentante`, `cedularepresentante`, `rumrepresentante`, `tipoactividad`, `actividadminera`, `descripcionactminera`, `nombreencargado`, `cedulaencargado`, `numempleados`, `nombreempleados`, `cedulaempleados`, `cargoempleados`, `medidacomercio`, `inventario`, `promediooro`, `promedioganancia`, `porcentajecompra`, `createdAt`, `updatedAt`) VALUES
+('e7f24b06-d1d4-426b-a2bf-88d6557d9438', 'Espera', '766896841', 'Comercio de Plata', '121321', '123', '123', 'Lara', 'Andrés Eloy Blanco', 'El Cantón', 'sadsad', 'asdsda', 'sadda', 'asasdds', 'sadsad', '\"Compra/Venta,Análisis/Fundición\"', '\"Oro,Diamante\"', '123', 'wqew', 'weqwqe', '3', 'wqewq', 'wqewqeew', 'qweqwe', '123', '\"Espectómetro,CajaFuerte\"', 'wqewq', 'wqewqe', 'wqeewq', '2022-05-27', '2022-05-27');
 
 -- --------------------------------------------------------
 
@@ -89,10 +90,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`guid`, `nombreusuario`, `permisos`, `contraseña`, `correo`, `telefono`, `createdAt`, `updatedAt`) VALUES
-('0e13fa3a-aa6a-493c-9b95-1bf4e883c484', 'germancvm', 'usuario', '$2a$10$xKrxtIT03CCNDbE7BfRs..A/4AcymADZ1n9Ikqt.CW6J/.a7yo2Wq', 'german@gmail.com', '04140210028', '2022-05-20', '2022-05-20'),
-('91df651e-01d5-44b6-a483-13f30811fcc5', 'germancvm', 'usuario', '$2a$10$.hRiObZ26LHrZek9IsmxcunJXczefTTJyAVooNFud/ZPjVw7ZkFHy', 'german@cvm.com', '04140210028', '2022-05-19', '2022-05-19'),
-('a2953845-963e-4675-a8bf-7bca2fca97df', 'yinniercvm', 'usuario', '$2a$10$62Yo2a4.E2b8.DBOjawJg.OkiKYzJbyYok8t7O12Z5Fn1y55IN2he', 'cvm@gmail.com', '02120210028', '2022-05-19', '2022-05-19'),
-('d4e20437-d6fb-4c32-a03d-418d835210c8', 'jesuscvm', 'usuario', '$2a$10$Gla1vE9p9w2jJPEAh72CLuHpmlqdRtEU9HSLJPtoUZRQZ48LgFFWm', 'cvm', '12321', '2022-05-19', '2022-05-19');
+('411524cf-b806-4c05-8354-a406a73b70c8', 'prueba', 'usuario', '$2a$10$w6tIUj62HI6fMEfQT25ifed82IurIBumX6uSpVwyXKONpU4blfwPi', 'prueba', 'prueba', '2022-05-27', '2022-05-27'),
+('5bfc31fc-5fe5-49da-b211-851a3d0b17f5', 'admincvm', 'admin', '$2a$10$vQokB5w1DIxVs4Wq.QI5Ke/ZXesITIDDSSURW5RSTtAbq113vqCGu', 'admincvm123@gmail.com', '12321312', '2022-05-27', '2022-05-27'),
+('e7f24b06-d1d4-426b-a2bf-88d6557d9438', 'germancvm', 'usuario', '$2a$10$SK6.lA1DJIup/snbb9RIlOLegJwM6WihzeFSvJkEumcXWftK.sGxG', 'german@gmail.com', '04140210028', '2022-05-27', '2022-05-27');
 
 --
 -- Índices para tablas volcadas
