@@ -4,7 +4,12 @@ import { DataTypes } from "sequelize";
 
 const CompanyModel = db.define("companies", {
   guid: { type: DataTypes.UUID, primaryKey: true },
+  solvencia: { type: DataTypes.STRING },
+  fechasolvencia: { type: DataTypes.DATE },
+  fechafinsolvencia: { type: DataTypes.DATE },
   status: { type: DataTypes.STRING },
+  fechaverificado: { type: DataTypes.DATE },
+  fechafinverificado: { type: DataTypes.DATE },
   nombre: { type: DataTypes.STRING },
   numregistro: { type: DataTypes.STRING },
   rif: { type: DataTypes.STRING },

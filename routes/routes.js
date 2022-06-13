@@ -7,6 +7,7 @@ import {
   loginUser,
   registerCompany,
   registerUser,
+  updateCompany,
 } from "../controllers/ComController.js";
 import path from "path";
 import { fileURLToPath } from "url";
@@ -15,6 +16,7 @@ const router = express.Router();
 
 router.get("/companies", getAllCompanies);
 router.get("/companies/:id", getCompany);
+router.put("/companies/:id", updateCompany);
 router.post("/home", authCompany);
 router.post("/companyregister", registerCompany);
 router.post("/certificate", companyData);

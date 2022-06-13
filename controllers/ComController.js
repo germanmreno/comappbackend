@@ -3,6 +3,7 @@ import { v4 as uuidv4 } from "uuid";
 import CompanyModel from "../models/ComModel.js";
 import UserModel from "../models/UserModel.js";
 import { SignJWT, jwtVerify } from "jose";
+import moment from "moment";
 
 //Métodos
 
@@ -91,7 +92,11 @@ export const authCompany = async (req, res) => {
     if (company === null) {
       res.json(false);
     } else {
-      res.json(true);
+      res.json({
+        exist: true,
+        verificado: company.status,
+        solvencia: company.solvencia,
+      });
     }
   } catch (err) {
     res.json({ message: error.message });
@@ -133,7 +138,7 @@ export const getCompany = async (req, res) => {
   try {
     const company = await CompanyModel.findAll({
       where: {
-        id: req.params.id,
+        guid: req.params.id,
       },
     });
     res.json(company[0]);
@@ -162,6 +167,19 @@ export const registerCompany = async (req, res) => {
       message: "La compañía se ha registrado correctamente",
     });
   } catch (error) {
+    res.json({ message: error.message });
+  }
+};
+
+//
+export const updateCompany = async (req, res) => {
+  try {
+    console.log(req.params.id);
+    await CompanyModel.update(req.body, {
+      where: { guid: req.params.id },
+    });
+    res.json("Actualizado correctamente");
+  } catch (err) {
     res.json({ message: error.message });
   }
 };
